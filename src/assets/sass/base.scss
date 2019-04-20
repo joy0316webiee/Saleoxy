@@ -1,0 +1,28 @@
+@import "./variables";
+
+/* Animations */
+.fade-anim-enter-active {
+  animation: coming .5s;
+  animation-delay: .3s;
+  opacity: 0;
+}
+
+@keyframes coming {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.wizard-page-container {
+  margin: 108px auto 0px;
+  width: 1282px;
+  height: 738px;
+  border-radius: 34px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.16);
+  margin: 138px auto 0px;
+  width: 1270px;
+  height: 738px;
+}
