@@ -89,43 +89,6 @@
 
   .calendar {    
     .calendar-head {
-      .stepper-container {
-        .to-back {
-          display: flex;
-          align-items: center;
-          float: left;
-          padding-top: 34px;
-          padding-left: 24px;
-
-          .to-back-icon {
-            padding: 4px;
-            width: 34px;
-            height: 34px;
-            background-color: $blue-primary;
-            border-radius: 50%;
-            display: inline-block;
-
-            img {
-              width: 25px;
-              height: 27px;
-            }
-
-            &:hover {
-              cursor: pointer;
-            }
-          }
-          .to-back-label {
-            width: 61px;
-            height: 39px;
-            color: $blue-primary;
-            font-family: Avenir-Medium;
-            font-size: 28px;
-            font-weight: 500;
-            padding-top: 7px;
-            padding-left: 8px;
-          }
-        }
-      }
       .title {
         h2 {
           margin-bottom: 0px;
