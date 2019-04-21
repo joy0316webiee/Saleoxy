@@ -1,9 +1,6 @@
 <template>
   <div class="wizard-page-container facebook">
-    <!-- <h1>Facebook</h1> -->
-    <!-- <router-link to="/login">&lt;Prev</router-link>
-    <router-link to="/addcalendar">Next&gt;</router-link> -->
-    <div class="facebook-head">
+    <div class="wizard-page-head facebook-head">
       <div class="stepper">
         <div class="stepper-wrapper">
           <span class="circle">1</span>
@@ -57,7 +54,9 @@ Skin treatment has always been much more, than just a job for us, it is a chance
             <p>Reminder: We always ask for name, phone and email so you don’t need to ask for those.</p>
           </div>
           <div class="btn-continue">
-            <button>continue</button>
+              <router-link to="/addcalendar">
+                <button>continue</button>
+              </router-link>
           </div>
         </div>
       </div>
@@ -109,55 +108,55 @@ Skin treatment has always been much more, than just a job for us, it is a chance
   @import "@/assets/sass/base.scss";
 
   .facebook {
-    background-color: $white;
+    // background-color: $white;
 
-    .facebook-head {
-      text-align: right;
+    // .facebook-head {
+    //   text-align: right;
 
-      .stepper {
-        display: inline-block;
+    //   .stepper {
+    //     display: inline-block;
 
-        .stepper-wrapper {
-          display: flex;
-          align-items: center;
-          padding: 34px 78px 0px 78px;
+    //     .stepper-wrapper {
+    //       display: flex;
+    //       align-items: center;
+    //       padding: 34px 78px 0px 78px;
 
-          .circle {
-            display: inline-block;
-            width: 39px;
-            height: 39px;
-            border: 4px solid $blue-primary;
-            border-radius: 50%;
-            text-align: center;
-            padding: 1px;
-            color: $blue-primary;
-            font-family: Avenir-black;
-            font-size: 28px;
-          }
-          .hypen {
-            display: inline-block;
-            width: 17px;
-            height: 4px;
-            background-color: $red-light;
-            margin: 0px 4px;
-          }
-        }
-      }
-      .title {
-        text-align: center;
+    //       .circle {
+    //         display: inline-block;
+    //         width: 39px;
+    //         height: 39px;
+    //         border: 4px solid $blue-primary;
+    //         border-radius: 50%;
+    //         text-align: center;
+    //         padding: 1px;
+    //         color: $blue-primary;
+    //         font-family: Avenir-black;
+    //         font-size: 28px;
+    //       }
+    //       .hypen {
+    //         display: inline-block;
+    //         width: 17px;
+    //         height: 4px;
+    //         background-color: $red-light;
+    //         margin: 0px 4px;
+    //       }
+    //     }
+    //   }
+    //   .title {
+    //     text-align: center;
 
-        h1 {
-          color: $red-light;
-          font-family: Avenir-Heavy;
-          font-size: 43px;
-          margin-top: 0px;
-        }
-        h2 {
-          color: $blue-primary;
-          font-size: 32px;
-        }
-      }
-    }
+    //     h1 {
+    //       color: $red-light;
+    //       font-family: Avenir-Heavy;
+    //       font-size: 43px;
+    //       margin-top: 0px;
+    //     }
+    //     h2 {
+    //       color: $blue-primary;
+    //       font-size: 32px;
+    //     }
+    //   }
+    // }
     .facebook-body {
       display: flex;
       padding: 0px 335px 0px 36px;
