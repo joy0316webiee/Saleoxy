@@ -44,17 +44,17 @@
           </div>
         </div>
         <div class="appointment-table-body">
-          <div class="appintment-table-row">
-            <div class="appintment-table-col-no">
+          <div class="appointment-table-row">
+            <div class="appointment-table-col-no">
               1
             </div>
-            <div class="appintment-table-col-start">
+            <div class="appointment-table-col-start">
               <input type="time">
             </div>
-            <div class="appintment-table-col-end">
+            <div class="appointment-table-col-end">
               <input type="time">
             </div>
-            <div class="appintment-table-col-days">
+            <div class="appointment-table-col-days">
               <span class="day-red">SU</span>
               <span class="day-blue">MO</span>
               <span class="day-blue">TU</span>
@@ -63,21 +63,21 @@
               <span class="day-blue">FR</span>
               <span class="day-blue">SA</span>
             </div>
-            <div class="appintment-table-col-remove">
+            <div class="appointment-table-col-remove">
               <span>x</span>
             </div>
           </div>
-          <div class="appintment-table-row">
-            <div class="appintment-table-col-no">
+          <div class="appointment-table-row">
+            <div class="appointment-table-col-no">
               2
             </div>
-            <div class="appintment-table-col-start">
+            <div class="appointment-table-col-start">
               <input type="time">
             </div>
-            <div class="appintment-table-col-end">
+            <div class="appointment-table-col-end">
               <input type="time">
             </div>
-            <div class="appintment-table-col-days">
+            <div class="appointment-table-col-days">
               <span class="sunday">SU</span>
               <span class="monday">MO</span>
               <span class="tuesday">TU</span>
@@ -86,21 +86,21 @@
               <span class="friday">FR</span>
               <span class="saturday">SA</span>
             </div>
-            <div class="appintment-table-col-remove">
+            <div class="appointment-table-col-remove">
               <span>x</span>
             </div>
           </div>
-          <div class="appintment-table-row">
-            <div class="appintment-table-col-no">
+          <div class="appointment-table-row">
+            <div class="appointment-table-col-no">
               3
             </div>
-            <div class="appintment-table-col-start">
+            <div class="appointment-table-col-start">
               <input type="time">
             </div>
-            <div class="appintment-table-col-end">
+            <div class="appointment-table-col-end">
               <input type="time">
             </div>
-            <div class="appintment-table-col-days">
+            <div class="appointment-table-col-days">
               <span class="sunday">SU</span>
               <span class="monday">MO</span>
               <span class="tuesday">TU</span>
@@ -109,21 +109,21 @@
               <span class="friday">FR</span>
               <span class="saturday">SA</span>
             </div>
-            <div class="appintment-table-col-remove">
+            <div class="appointment-table-col-remove">
               <span>x</span>
             </div>
           </div>
-          <div class="appintment-table-row">
-            <div class="appintment-table-col-no">
+          <div class="appointment-table-row">
+            <div class="appointment-table-col-no">
               4
             </div>
-            <div class="appintment-table-col-start">
+            <div class="appointment-table-col-start">
               <input type="time">
             </div>
-            <div class="appintment-table-col-end">
+            <div class="appointment-table-col-end">
               <input type="time">
             </div>
-            <div class="appintment-table-col-days">
+            <div class="appointment-table-col-days">
               <span class="sunday">SU</span>
               <span class="monday">MO</span>
               <span class="tuesday">TU</span>
@@ -132,21 +132,21 @@
               <span class="friday">FR</span>
               <span class="saturday">SA</span>
             </div>
-            <div class="appintment-table-col-remove">
+            <div class="appointment-table-col-remove">
               <span>x</span>
             </div>
           </div>
-          <div class="appintment-table-row">
-            <div class="appintment-table-col-no">
+          <div class="appointment-table-row">
+            <div class="appointment-table-col-no">
               5
             </div>
-            <div class="appintment-table-col-start">
+            <div class="appointment-table-col-start">
               <input type="time">
             </div>
-            <div class="appintment-table-col-end">
+            <div class="appointment-table-col-end">
               <input type="time">
             </div>
-            <div class="appintment-table-col-days">
+            <div class="appointment-table-col-days">
               <span class="sunday">SU</span>
               <span class="monday">MO</span>
               <span class="tuesday">TU</span>
@@ -155,7 +155,7 @@
               <span class="friday">FR</span>
               <span class="saturday">SA</span>
             </div>
-            <div class="appintment-table-col-remove">
+            <div class="appointment-table-col-remove">
               <span>x</span>
             </div>
           </div>
@@ -172,19 +172,32 @@
 </template>
 
 <style scoped lang="scss">
-  .appintment {
-    .appintment-head {
-      .title {
-        h2 {
+  .appointment {
+    height: 793px;
 
+    .appointment-head {
+      .title {
+        padding-top: 31px;
+
+        h2 {
+          margin-bottom: 0px;
         }
         h3{
-
+          color: #fe5d89;
+          font-size: 25px;
+          margin-top: 5px;
+          margin-bottom: 15px;
         }
       }
     }
-    .appintment-table {
-      .appintment-table-header {
+    .appointment-table {
+      width: 1104px;
+      height: 495px;
+      border-radius: 21px;
+      border: 5px solid #e9eefe;
+      margin: 0 auto;
+
+      .appointment-table-header {
         .header-no {
           
         }
@@ -198,21 +211,21 @@
 
         }
       }
-      .appintment-table-body {
-        .appintment-table-row {
-          .appintment-table-col-no {
+      .appointment-table-body {
+        .appointment-table-row {
+          .appointment-table-col-no {
           }
-          .appintment-table-col-start {
+          .appointment-table-col-start {
             input {
 
             }
           }
-          .appintment-table-col-end {
+          .appointment-table-col-end {
             input {
 
             }
           }
-          .appintment-table-col-days {
+          .appointment-table-col-days {
             .day-red {
 
             }
@@ -220,7 +233,7 @@
 
             }
           }
-          .appintment-table-col-remove {
+          .appointment-table-col-remove {
             span {
 
             }
@@ -228,13 +241,13 @@
         }
 
       }
-      .appintment-table-footer {
+      .appointment-table-footer {
         span {
 
         }
       }
     }
-    .appintment-foot {
+    .appointment-foot {
       button {
         
       }
