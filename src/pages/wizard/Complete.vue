@@ -3,9 +3,11 @@
     <div class="wizard-page-head complete-head">
       <div class="stepper-container">
         <div class="to-back">
-          <span class="to-back-icon">
-            <img src="@/assets/images/back-icon.png" alt="to-back-icon">
-          </span>
+          <router-link to="/addappointment">
+            <span class="to-back-icon">
+              <img src="@/assets/images/back-icon.png" alt="to-back-icon">
+            </span>
+          </router-link>
           <span class="to-back-label">Back</span>
         </div>
         <div class="stepper">
