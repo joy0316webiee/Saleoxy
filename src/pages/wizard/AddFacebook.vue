@@ -109,55 +109,6 @@ export default {
 @import "@/assets/sass/base.scss";
 
 .facebook {
-  // background-color: $white;
-
-  // .facebook-head {
-  //   text-align: right;
-
-  //   .stepper {
-  //     display: inline-block;
-
-  //     .stepper-wrapper {
-  //       display: flex;
-  //       align-items: center;
-  //       padding: 34px 78px 0px 78px;
-
-  //       .circle {
-  //         display: inline-block;
-  //         width: 39px;
-  //         height: 39px;
-  //         border: 4px solid $blue-primary;
-  //         border-radius: 50%;
-  //         text-align: center;
-  //         padding: 1px;
-  //         color: $blue-primary;
-  //         font-family: Avenir-black;
-  //         font-size: 28px;
-  //       }
-  //       .hypen {
-  //         display: inline-block;
-  //         width: 17px;
-  //         height: 4px;
-  //         background-color: $red-light;
-  //         margin: 0px 4px;
-  //       }
-  //     }
-  //   }
-  //   .title {
-  //     text-align: center;
-
-  //     h1 {
-  //       color: $red-light;
-  //       font-family: Avenir-Heavy;
-  //       font-size: 43px;
-  //       margin-top: 0px;
-  //     }
-  //     h2 {
-  //       color: $blue-primary;
-  //       font-size: 32px;
-  //     }
-  //   }
-  // }
   .facebook-body {
     display: flex;
     padding: 0px 335px 0px 36px;
