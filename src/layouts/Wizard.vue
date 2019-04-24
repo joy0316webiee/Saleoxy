@@ -1,6 +1,6 @@
 <template>
   <div class="wizard">
-    <Header />
+    <Header/>
     <transition name="fade-anim">
       <router-view/>
     </transition>
@@ -8,23 +8,23 @@
 </template>
 
 <script>
-  import Header from '@/components/Header.vue'
+import Header from "@/components/Header.vue";
 
-  export default {
-    name: 'Wizard',
-    components: {
-      Header
-    }
+export default {
+  name: "Wizard",
+  components: {
+    Header
   }
+};
 </script>
 
 <style scoped lang="scss">
-  @import "@/assets/sass/base.scss";
+@import "@/assets/sass/base.scss";
 
-  /* Styling */
-  .wizard {
-    background-image: url("~@/assets/images/wizard_bg.png");
-    background-size: cover;
-    height: 1080px;
-  }
+/* Styling */
+.wizard {
+  background-image: url("~@/assets/images/wizard_bg.png");
+  background-size: cover;
+  height: 1080px;
+}
 </style>

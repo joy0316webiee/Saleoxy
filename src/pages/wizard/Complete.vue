@@ -47,90 +47,96 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "Complete"
+};
+</script>
+
 <style scope lang="scss">
-  .complete {
-    .complete-head {
-      .sale-logo {
-        padding: 46px 434px 0px;
+.complete {
+  .complete-head {
+    .sale-logo {
+      padding: 46px 434px 0px;
 
-        img {
-          width: 398px;
-          height: 54px;
-        }
-      }
-      .title {
-        padding-top: 61px;
-
-        h1 {
-          margin-bottom: 9px;
-        }
-        h2 {
-          margin: 0px;
-        }
+      img {
+        width: 398px;
+        height: 54px;
       }
     }
-    .complete-body {
-      .complete-body-robot {
-        position: absolute;
-        top: 172px;
-        left: 149px;
+    .title {
+      padding-top: 61px;
 
-        img {
-          width: 243px;
-          height: 305px;
-        }
+      h1 {
+        margin-bottom: 9px;
       }
-      .complete-body-tick {
-        text-align: center;
-        padding-top: 36px;
-
-        span {
-          display: inline-block;
-          width: 146px;
-          height: 146px;
-          padding: 34px 20px;
-          border-radius: 50%;
-          background-color: #164bcd;
-
-          img {
-            width: 90px;
-            height: 67px;
-          }
-        }
-      }
-      .complete-body-desc {
-        text-align: center;
-
-        p {
-          color: #164bcd;
-          font-family: Avenir;
-          font-size: 32px;
-          font-weight: 800;
-          text-transform: uppercase;
-          margin: 49px 0px;
-        }
-      }
-    }
-    .complete-foot {
-      text-align: center;
-
-      button {
-        width: 291px;
-        height: 86px;
-        border-radius: 6px;
-        background-color: #164bcd;
-        color: #ffffff;
-        font-family: Avenir-Black;
-        font-size: 39px;
-        /* font-weight: 900; */
-        letter-spacing: 1.4px;
-        line-height: 42px;
-        text-transform: uppercase;
-
-        &:hover {
-          cursor: pointer;
-        }
+      h2 {
+        margin: 0px;
       }
     }
   }
+  .complete-body {
+    .complete-body-robot {
+      position: absolute;
+      top: 172px;
+      left: 149px;
+
+      img {
+        width: 243px;
+        height: 305px;
+      }
+    }
+    .complete-body-tick {
+      text-align: center;
+      padding-top: 36px;
+
+      span {
+        display: inline-block;
+        width: 146px;
+        height: 146px;
+        padding: 34px 20px;
+        border-radius: 50%;
+        background-color: #164bcd;
+
+        img {
+          width: 90px;
+          height: 67px;
+        }
+      }
+    }
+    .complete-body-desc {
+      text-align: center;
+
+      p {
+        color: #164bcd;
+        font-family: Avenir;
+        font-size: 32px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin: 49px 0px;
+      }
+    }
+  }
+  .complete-foot {
+    text-align: center;
+
+    button {
+      width: 291px;
+      height: 86px;
+      border-radius: 6px;
+      background-color: #164bcd;
+      color: #ffffff;
+      font-family: Avenir-Black;
+      font-size: 39px;
+      /* font-weight: 900; */
+      letter-spacing: 1.4px;
+      line-height: 42px;
+      text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
 </style>

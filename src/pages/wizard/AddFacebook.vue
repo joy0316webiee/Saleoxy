@@ -48,15 +48,16 @@
         <div class="facebook-foot-bottom">
           <div class="facebook-greetings">
             <h4>Greetings message</h4>
-            <textarea placeholder="EXAMPLE : Hello! Thank you for contacting us.
-Skin treatment has always been much more, than just a job for us, it is a chance to change someone’s life">
-            </textarea>
+            <textarea
+              placeholder="EXAMPLE : Hello! Thank you for contacting us. 
+              Skin treatment has always been much more, than just a job for us, it is a chance to change someone’s life"
+            ></textarea>
             <p>Reminder: We always ask for name, phone and email so you don’t need to ask for those.</p>
           </div>
           <div class="btn-continue">
-              <router-link to="/addcalendar">
-                <button>continue</button>
-              </router-link>
+            <router-link to="/addcalendar">
+              <button>continue</button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -89,250 +90,249 @@ Skin treatment has always been much more, than just a job for us, it is a chance
 </template>
 
 <script>
-  export default {
-    name: 'AddFacebook',
-    data() {
-      return {
-        connected: false
-      }
-    },
-    methods: {
-      connectFacebook() {
-        this.connected = true;
-      }
+export default {
+  name: "AddFacebook",
+  data() {
+    return {
+      connected: false
+    };
+  },
+  methods: {
+    connectFacebook() {
+      this.connected = true;
     }
   }
+};
 </script>
 
 <style scoped lang="scss">
-  @import "@/assets/sass/base.scss";
+@import "@/assets/sass/base.scss";
 
-  .facebook {
-    // background-color: $white;
+.facebook {
+  // background-color: $white;
 
-    // .facebook-head {
-    //   text-align: right;
+  // .facebook-head {
+  //   text-align: right;
 
-    //   .stepper {
-    //     display: inline-block;
+  //   .stepper {
+  //     display: inline-block;
 
-    //     .stepper-wrapper {
-    //       display: flex;
-    //       align-items: center;
-    //       padding: 34px 78px 0px 78px;
+  //     .stepper-wrapper {
+  //       display: flex;
+  //       align-items: center;
+  //       padding: 34px 78px 0px 78px;
 
-    //       .circle {
-    //         display: inline-block;
-    //         width: 39px;
-    //         height: 39px;
-    //         border: 4px solid $blue-primary;
-    //         border-radius: 50%;
-    //         text-align: center;
-    //         padding: 1px;
-    //         color: $blue-primary;
-    //         font-family: Avenir-black;
-    //         font-size: 28px;
-    //       }
-    //       .hypen {
-    //         display: inline-block;
-    //         width: 17px;
-    //         height: 4px;
-    //         background-color: $red-light;
-    //         margin: 0px 4px;
-    //       }
-    //     }
-    //   }
-    //   .title {
-    //     text-align: center;
+  //       .circle {
+  //         display: inline-block;
+  //         width: 39px;
+  //         height: 39px;
+  //         border: 4px solid $blue-primary;
+  //         border-radius: 50%;
+  //         text-align: center;
+  //         padding: 1px;
+  //         color: $blue-primary;
+  //         font-family: Avenir-black;
+  //         font-size: 28px;
+  //       }
+  //       .hypen {
+  //         display: inline-block;
+  //         width: 17px;
+  //         height: 4px;
+  //         background-color: $red-light;
+  //         margin: 0px 4px;
+  //       }
+  //     }
+  //   }
+  //   .title {
+  //     text-align: center;
 
-    //     h1 {
-    //       color: $red-light;
-    //       font-family: Avenir-Heavy;
-    //       font-size: 43px;
-    //       margin-top: 0px;
-    //     }
-    //     h2 {
-    //       color: $blue-primary;
-    //       font-size: 32px;
-    //     }
-    //   }
-    // }
-    .facebook-body {
-      display: flex;
-      padding: 0px 335px 0px 36px;
+  //     h1 {
+  //       color: $red-light;
+  //       font-family: Avenir-Heavy;
+  //       font-size: 43px;
+  //       margin-top: 0px;
+  //     }
+  //     h2 {
+  //       color: $blue-primary;
+  //       font-size: 32px;
+  //     }
+  //   }
+  // }
+  .facebook-body {
+    display: flex;
+    padding: 0px 335px 0px 36px;
 
-      .facebook-mark-lg {
+    .facebook-mark-lg {
+      img {
+        width: 122px;
+        height: 122px;
+      }
+    }
+    .facebook-body-desc {
+      padding-left: 32px;
+
+      h3 {
+        color: $blue-primary;
+        font-family: Avenir-Black;
+        font-size: 33px;
+        margin: 0px;
+        line-height: 45px;
+      }
+      p {
+        color: $black-primary;
+        font-size: 26px;
+        line-height: 37px;
+        margin: 0px;
+        padding: 6px 32px 0px 0px;
+      }
+    }
+  }
+  .facebook-foot {
+    .facebook-connected {
+      .facebook-foot-top {
+        display: flex;
+        padding: 36px 0px 39px 190px;
+
+        .facebook-disconnect {
+          width: 365px;
+          display: flex;
+        }
+        .facebook-offical {
+          display: flex;
+        }
+
         img {
-          width: 122px;
-          height: 122px;
+          width: 68px;
+          height: 68px;
+        }
+        .desc {
+          padding: 2px 0px 0px 16px;
+
+          h3 {
+            margin: 0px;
+            color: $blue-primary;
+            font-family: Avenir-Heavy;
+            font-size: 32px;
+          }
+          span {
+            color: $blue-primary;
+            font-size: 22px;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
-      .facebook-body-desc {
-        padding-left: 32px;
+      .facebook-foot-bottom {
+        display: flex;
+        padding-left: 190px;
 
-        h3 {
-          color: $blue-primary;
-          font-family: Avenir-Black;
-          font-size: 33px;
-          margin: 0px;
-          line-height: 45px;
+        .facebook-greetings {
+          h4 {
+            margin: 0px 0px 18px;
+            color: $blue-primary;
+            font-family: Avenir;
+            font-size: 21px;
+          }
+          textarea {
+            width: 518px;
+            height: 103px;
+            padding: 9px 13px 11px;
+            border: none;
+            border-radius: 4px;
+            background-color: $white-darken;
+            resize: none;
+            color: $grey-dark;
+            font-family: Avenir-Medium;
+            font-size: 16px;
+            line-height: 23px;
+          }
+          p {
+            color: $pink-primary;
+            font-family: Avenir-Heavy;
+            font-size: 15px;
+            width: 387px;
+            margin: 0px;
+            padding-top: 11px;
+          }
         }
-        p {
-          color: $black-primary;
-          font-size: 26px;
-          line-height: 37px;
-          margin: 0px;
-          padding: 6px 32px 0px 0px;
+        .btn-continue {
+          padding: 133px 0px 0px 231px;
+
+          button {
+            width: 233px;
+            height: 70px;
+            border-radius: 6px;
+            background-color: $blue-primary;
+            color: $white;
+            font-family: Avenir-Black;
+            font-size: 31px;
+            letter-spacing: 1.12px;
+            line-height: 33px;
+            text-transform: uppercase;
+          }
         }
       }
     }
-    .facebook-foot {
-      .facebook-connected {
-        .facebook-foot-top {
-          display: flex;
-          padding: 36px 0px 39px 190px;
-          
-          .facebook-disconnect {
-            width: 365px;
-            display: flex;
-          }
-          .facebook-offical {
-            display: flex;
-          }
-          
-          img {
-            width: 68px;
-            height: 68px;
-          }
-          .desc {
-            padding: 2px 0px 0px 16px;
+    .facebook-onboard {
+      .facebook-foot-top {
+        padding: 23px 0px 40px 224px;
 
-            h3 {
-              margin: 0px;
-              color: $blue-primary;
-              font-family: Avenir-Heavy;
-              font-size: 32px;
-            }
-            span {
-              color: $blue-primary;
-              font-size: 22px;
+        p {
+          font-size: 23px;
+          line-height: 31px;
+          margin: 0px;
+        }
+      }
+      .facebook-foot-middle {
+        p {
+          font-size: 21px;
+          line-height: 38px;
+          margin: 0px;
+          padding-left: 90px;
+        }
+      }
+      .facebook-foot-bottom {
+        display: flex;
+        padding-left: 90px;
+        padding-top: 44px;
 
-              &:hover {
-                cursor: pointer;
-              }
-            } 
+        .bottom-desc {
+          padding-right: 50px;
+
+          p {
+            font-size: 21px;
+            line-height: 34px;
+            margin: 0px;
           }
         }
-        .facebook-foot-bottom {
+        .bottom-button {
           display: flex;
-          padding-left: 190px;
+          padding-left: 20px;
 
-          .facebook-greetings {
-            h4 {
-              margin: 0px 0px 18px;
-              color: $blue-primary;
-              font-family: Avenir;
-              font-size: 21px;
-            }
-            textarea {
-              width: 518px;
-              height: 103px;
-              padding: 9px 13px 11px;
-              border: none;
-              border-radius: 4px;
-              background-color: $white-darken;
-              resize: none;
-              color: $grey-dark;
-              font-family: Avenir-Medium;
-              font-size: 16px;
-              line-height: 23px;
-            }
-            p {
-              color: $pink-primary;
-              font-family: Avenir-Heavy;
-              font-size: 15px;
-              width: 387px;
-              margin: 0px;
-              padding-top: 11px;
+          .facebook-mark-sm {
+            img {
+              width: 86px;
+              height: 86px;
             }
           }
-          .btn-continue {
-            padding: 133px 0px 0px 231px;
-
+          .btn-connect {
             button {
-              width: 233px;
-              height: 70px;
+              width: 291px;
+              height: 86px;
               border-radius: 6px;
               background-color: $blue-primary;
               color: $white;
               font-family: Avenir-Black;
-              font-size: 31px;
-              letter-spacing: 1.12px;
-              line-height: 33px;
-              text-transform: uppercase;
-            }
-          }
-        }
-      }
-      .facebook-onboard {
-        .facebook-foot-top {
-          padding: 23px 0px 40px 224px;
+              font-size: 39px;
+              font-weight: 900;
+              letter-spacing: 1.4px;
+              line-height: 42px;
+              margin-left: 12px;
 
-          p {
-            font-size: 23px;
-            line-height: 31px;
-            margin: 0px;
-          }
-        }
-        .facebook-foot-middle {
-          p {
-            font-size: 21px;
-            line-height: 38px;
-            margin: 0px;
-            padding-left: 90px;
-          }
-        }
-        .facebook-foot-bottom {
-          display: flex;
-          padding-left: 90px;
-          padding-top: 44px;
-
-          .bottom-desc {
-            padding-right: 50px;
-
-            p {
-              font-size: 21px;
-              line-height: 34px;
-              margin: 0px;
-            }
-          }
-          .bottom-button {
-            display: flex;
-            padding-left: 20px;
-
-            .facebook-mark-sm {
-              img {
-                width: 86px;
-                height: 86px;
-              }
-            }
-            .btn-connect {
-              button {
-                width: 291px;
-                height: 86px;
-                border-radius: 6px;
-                background-color: $blue-primary;
-                color: $white;
-                font-family: Avenir-Black;
-                font-size: 39px;
-                font-weight: 900;
-                letter-spacing: 1.4px;
-                line-height: 42px;
-                margin-left: 12px;
-
-                &:hover {
-                  cursor: pointer;
-                }
+              &:hover {
+                cursor: pointer;
               }
             }
           }
@@ -340,4 +340,5 @@ Skin treatment has always been much more, than just a job for us, it is a chance
       }
     }
   }
+}
 </style>
