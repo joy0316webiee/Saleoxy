@@ -1,51 +1,51 @@
 // fonts
 @font-face {
   font-family: Avenir-Black;
-  src: url('~@/assets/fonts/AvenirLTStd-Black.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-Black.otf");
 }
 @font-face {
   font-family: Avenir-BlackOblique;
-  src: url('~@/assets/fonts/AvenirLTStd-BlackOblique.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-BlackOblique.otf");
 }
 @font-face {
   font-family: Avenir-Book;
-  src: url('~@/assets/fonts/AvenirLTStd-Book.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-Book.otf");
 }
 @font-face {
   font-family: Avenir-BookOblique;
-  src: url('~@/assets/fonts/AvenirLTStd-BookOblique.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-BookOblique.otf");
 }
 @font-face {
   font-family: Avenir-Heavy;
-  src: url('~@/assets/fonts/AvenirLTStd-Heavy.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-Heavy.otf");
 }
 @font-face {
   font-family: Avenir-HeavyOblique;
-  src: url('~@/assets/fonts/AvenirLTStd-HeavyOblique.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-HeavyOblique.otf");
 }
 @font-face {
   font-family: Avenir-Light;
-  src: url('~@/assets/fonts/AvenirLTStd-Light.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-Light.otf");
 }
 @font-face {
   font-family: Avenir-LightOblique;
-  src: url('~@/assets/fonts/AvenirLTStd-LightOblique.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-LightOblique.otf");
 }
 @font-face {
   font-family: Avenir-Medium;
-  src: url('~@/assets/fonts/AvenirLTStd-Medium.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-Medium.otf");
 }
 @font-face {
   font-family: Avenir-MediumOblique;
-  src: url('~@/assets/fonts/AvenirLTStd-MediumOblique.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-MediumOblique.otf");
 }
 @font-face {
   font-family: Avenir-Oblique;
-  src: url('~@/assets/fonts/AvenirLTStd-Oblique.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-Oblique.otf");
 }
 @font-face {
   font-family: Avenir-Roman;
-  src: url('~@/assets/fonts/AvenirLTStd-Roman.otf');
+  src: url("~@/assets/fonts/AvenirLTStd-Roman.otf");
 }
 
 // colors
@@ -56,21 +56,66 @@ $black-primary: #000000;
 $red-light: #fe5d89;
 $pink-light: #a588d0;
 $pink-primary: #6b3fb8;
-$blue-dark:#002ca7;
+$blue-dark: #002ca7;
 $blue-primary: #164bcd;
+$grey-lighter: #d3d4fc;
 $grey-light: #6d6e71;
 $grey-dark: #707070;
 
-// sizes
-$sizes: (
-  desktop: 1440px,
-  tablet: 1130px,
-  ipad: 682px,
-  mobile: 580px,
-);
+// screen sizes
+$desktop-lg: 1920px;
+$desktop-md: 1458px;
+$desktop-md-fa: 1684px;
+$tablet: 920px;
+$ipad: 722px;
+$iphone: 460px;
+$min-width: 350px;
 
-@mixin desktop {
-  @media (max-width: #{size(desktop)}) {
+// font sizes desktop
+$font-xxs: 12px;
+$font-xs-1: 15px;
+$font-xs-2: 16px;
+$font-xs-3: 17px;
+$font-sm-1: 18px;
+$font-sm-2: 19px;
+$font-sm-3: 20px;
+$font-md-1: 21px;
+$font-md-2: 23px;
+$font-md-3: 25px;
+$font-lg-1: 26px;
+$font-lg-2: 28px;
+$font-lg-3: 29px;
+$font-xl-1: 31px;
+$font-xl-2: 34px;
+$font-xl-3: 35px;
+
+@mixin desktop-lg {
+  @media (max-width: #{$desktop-lg}) {
+    @content;
+  }
+}
+@mixin desktop-md {
+  @media (max-width: #{$desktop-md}) {
+    @content;
+  }
+}
+@mixin desktop-md-fa {
+  @media (max-width: #{$desktop-md-fa}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+@mixin ipad {
+  @media (max-width: #{$ipad}) {
+    @content;
+  }
+}
+@mixin iphone {
+  @media (max-width: #{$iphone}) {
     @content;
   }
 }

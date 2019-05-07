@@ -1,71 +1,39 @@
 <template>
-  <div class="wizard-page-container facebook">
-    <div class="wizard-page-head facebook-head">
-      <div class="stepper">
-        <div class="stepper-wrapper">
-          <span class="circle">1</span>
-          <span class="hypen"></span>
-          <span class="circle">2</span>
-          <span class="hypen"></span>
-          <span class="circle">3</span>
+  <div class="page-container facebook">
+    <div class="page-head facebook-head">
+      <div class="stepper-container">
+        <div class="to-back">
+          <router-link to="/login">
+            <span class="to-back-icon">
+              <img src="@/assets/images/ic_back.png" alt="to-back-icon">
+            </span>
+          </router-link>
+          <span class="to-back-label">Back</span>
         </div>
+        <Stepper value="1"/>
       </div>
-      <div class="title">
+      <div class="title" :class="{connected: connected}">
         <h1>Welcome Onboard!</h1>
         <h2>you’re 3 steps from setting up your workspace</h2>
       </div>
     </div>
     <div class="facebook-body">
-      <div class="facebook-mark-lg">
-        <img src="@/assets/images/facebook_mark.png" alt="facebook-mark-lg">
-      </div>
-      <div class="facebook-body-desc">
-        <h3>Communicate with Facebook users via Saleoxy</h3>
-        <p>
-          Connect your company’s Facebook page to Open Channels
-          and communicate with Facebook users via Saleoxy.
-        </p>
-      </div>
+      <FacebookDesc :connected="connected"/>
     </div>
     <div class="facebook-foot">
       <div v-if="connected" class="facebook-connected">
-        <div class="facebook-foot-top">
-          <div class="facebook-disconnect">
-            <img src="@/assets/images/user.png" alt="user">
-            <div class="desc">
-              <h3>John Smith</h3>
-              <span>Disconnect</span>
-            </div>
-          </div>
-          <div class="facebook-offical">
-            <img src="@/assets/images/flag.png" alt="flag">
-            <div class="desc">
-              <h3>Best Doctor offical page</h3>
-              <span>Edit</span>
-            </div>
-          </div>
-        </div>
-        <div class="facebook-foot-bottom">
-          <div class="facebook-greetings">
-            <h4>Greetings message</h4>
-            <textarea
-              placeholder="EXAMPLE : Hello! Thank you for contacting us. 
-              Skin treatment has always been much more, than just a job for us, it is a chance to change someone’s life"
-            ></textarea>
-            <p>Reminder: We always ask for name, phone and email so you don’t need to ask for those.</p>
-          </div>
-          <div class="btn-continue">
-            <router-link to="/addcalendar">
-              <button>continue</button>
-            </router-link>
-          </div>
+        <FacebookEdit/>
+        <div class="btn-continue">
+          <router-link to="/addcalendar">
+            <button class="btn-blue">continue</button>
+          </router-link>
         </div>
       </div>
       <div v-else class="facebook-onboard">
         <div class="facebook-foot-top">
-          <p>- automatic incoming message distribution according to queue rules</p>
-          <p>- familiar Saleoxy chat interface</p>
-          <p>- all conversations are saved to CRM history</p>
+          <p>- Automatic incoming message distribution according to queue rules</p>
+          <p>- Familiar Saleoxy chat interface</p>
+          <p>- All conversations are saved to CRM history</p>
         </div>
         <div class="facebook-foot-middle">
           <p>Please authorize with the Facebook account that manages your pages to receive messages from your Saleoxy clients.</p>
@@ -73,14 +41,13 @@
         <div class="facebook-foot-bottom">
           <div class="bottom-desc">
             <p>You need to create your company Facebook page or use an existing one.</p>
-            <p>You have to be an administrator of that page.</p>
           </div>
           <div class="bottom-button">
             <div class="facebook-mark-sm">
               <img src="@/assets/images/facebook_mark.png" alt="facebook-mark-sm">
             </div>
             <div class="btn-connect">
-              <button v-on:click="connectFacebook()">Connect</button>
+              <button class="btn-blue" v-on:click="connectFacebook()">Connect</button>
             </div>
           </div>
         </div>
@@ -90,8 +57,17 @@
 </template>
 
 <script>
+import Stepper from "@/components/Stepper.vue";
+import FacebookDesc from "@/components/Facebook/FacebookDesc.vue";
+import FacebookEdit from "@/components/Facebook/FacebookEdit.vue";
+
 export default {
   name: "AddFacebook",
+  components: {
+    Stepper,
+    FacebookDesc,
+    FacebookEdit
+  },
   data() {
     return {
       connected: false
@@ -109,181 +85,202 @@ export default {
 @import "@/assets/sass/base.scss";
 
 .facebook {
-  .facebook-body {
-    display: flex;
-    padding: 0px 335px 0px 36px;
+  .facebook-head {
+    .title {
+      &.connected {
+        @include ipad {
+          padding-top: 44px;
 
-    .facebook-mark-lg {
-      img {
-        width: 122px;
-        height: 122px;
+          h1 {
+            margin-bottom: 7px;
+          }
+          h2 {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      h2 {
+        @include desktop-md {
+          margin-bottom: 31px;
+        }
       }
     }
-    .facebook-body-desc {
-      padding-left: 32px;
+  }
+  .facebook-body {
+    padding: 0px 164px 0px 198px;
 
-      h3 {
-        color: $blue-primary;
-        font-family: Avenir-Black;
-        font-size: 33px;
-        margin: 0px;
-        line-height: 45px;
-      }
-      p {
-        color: $black-primary;
-        font-size: 26px;
-        line-height: 37px;
-        margin: 0px;
-        padding: 6px 32px 0px 0px;
-      }
+    @include desktop-md {
+      padding: 0px 0px 0px 120px;
+    }
+    @include tablet {
+      padding: 0px 0px 0px 44px;
+    }
+    @include ipad {
+      padding: 0px 0px 0px 46px;
     }
   }
   .facebook-foot {
     .facebook-connected {
-      .facebook-foot-top {
-        display: flex;
-        padding: 36px 0px 39px 190px;
+      .btn-continue {
+        position: absolute;
+        right: 72px;
+        bottom: 18px;
 
-        .facebook-disconnect {
-          width: 365px;
-          display: flex;
+        @include desktop-md {
+          right: 37px;
         }
-        .facebook-offical {
-          display: flex;
+        @include ipad {
+          right: 16px;
+          bottom: 24px;
         }
 
-        img {
-          width: 68px;
-          height: 68px;
-        }
-        .desc {
-          padding: 2px 0px 0px 16px;
+        button {
+          width: 193px;
+          height: 58px;
+          font-size: $font-md-3;
+          line-height: 27px;
+          letter-spacing: 1.12px;
+          text-transform: uppercase;
 
-          h3 {
-            margin: 0px;
-            color: $blue-primary;
-            font-family: Avenir-Heavy;
-            font-size: 32px;
-          }
-          span {
-            color: $blue-primary;
-            font-size: 22px;
-
-            &:hover {
-              cursor: pointer;
-            }
-          }
-        }
-      }
-      .facebook-foot-bottom {
-        display: flex;
-        padding-left: 190px;
-
-        .facebook-greetings {
-          h4 {
-            margin: 0px 0px 18px;
-            color: $blue-primary;
-            font-family: Avenir;
-            font-size: 21px;
-          }
-          textarea {
-            width: 518px;
-            height: 103px;
-            padding: 9px 13px 11px;
-            border: none;
-            border-radius: 4px;
-            background-color: $white-darken;
-            resize: none;
-            color: $grey-dark;
-            font-family: Avenir-Medium;
-            font-size: 16px;
-            line-height: 23px;
-          }
-          p {
-            color: $pink-primary;
-            font-family: Avenir-Heavy;
-            font-size: 15px;
-            width: 387px;
-            margin: 0px;
-            padding-top: 11px;
-          }
-        }
-        .btn-continue {
-          padding: 133px 0px 0px 231px;
-
-          button {
-            width: 233px;
-            height: 70px;
-            border-radius: 6px;
-            background-color: $blue-primary;
-            color: $white;
-            font-family: Avenir-Black;
-            font-size: 31px;
-            letter-spacing: 1.12px;
-            line-height: 33px;
-            text-transform: uppercase;
+          @include ipad {
+            width: 109px;
+            height: 33px;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            line-height: 15px;
           }
         }
       }
     }
     .facebook-onboard {
       .facebook-foot-top {
-        padding: 23px 0px 40px 224px;
+        padding: 15px 0px 65px 298px;
+
+        @include desktop-md {
+          padding: 7px 0px 21px 218px;
+        }
+        @include tablet {
+          padding: 7px 0px 21px 141px;
+        }
+        @include ipad {
+          padding: 99px 42px 0px 36px;
+        }
 
         p {
-          font-size: 23px;
+          font-size: $font-sm-2;
           line-height: 31px;
           margin: 0px;
+
+          @include ipad {
+            font-size: 12px;
+            line-height: 20px;
+          }
         }
       }
       .facebook-foot-middle {
         p {
-          font-size: 21px;
-          line-height: 38px;
+          font-size: $font-md-1;
+          line-height: 30px;
           margin: 0px;
-          padding-left: 90px;
+          padding: 0px 183px;
+          text-align: center;
+          color: $red-light;
+
+          @include desktop-md {
+            padding: 0px 76px;
+          }
+          @include tablet {
+            padding: 16px 50px;
+          }
+          @include ipad {
+            font-size: 10px;
+            line-height: 15px;
+            position: absolute;
+            left: 22px;
+            top: 541px;
+            padding: 0px 22px 0px 0px;
+          }
         }
       }
       .facebook-foot-bottom {
         display: flex;
-        padding-left: 90px;
-        padding-top: 44px;
+        padding-left: 147px;
+        padding-top: 45px;
+
+        @include desktop-md {
+          padding-left: 37px;
+          padding-top: 39px;
+        }
+        @include ipad {
+          padding-left: 96px;
+          padding-top: 23px;
+        }
+        @include iphone {
+          padding-left: 73px;
+        }
 
         .bottom-desc {
-          padding-right: 50px;
+          width: 580px;
+
+          @include ipad {
+            width: auto;
+          }
 
           p {
-            font-size: 21px;
+            font-size: $font-md-1;
             line-height: 34px;
             margin: 0px;
+
+            @include tablet {
+              font-size: 16px;
+            }
+            @include ipad {
+              position: absolute;
+              left: 22px;
+              top: 495px;
+              padding-right: 22px;
+              font-size: 10px;
+              line-height: 18px;
+              text-align: center;
+            }
+            @include iphone {
+              top: 484px;
+            }
           }
         }
         .bottom-button {
           display: flex;
-          padding-left: 20px;
+          padding-left: 12px;
+
+          @include desktop-md {
+            padding-right: 20px;
+          }
+          @include ipad {
+            padding-left: 0px;
+          }
 
           .facebook-mark-sm {
             img {
-              width: 86px;
-              height: 86px;
+              width: 57px;
+              height: 57px;
+
+              @include ipad {
+                width: 39px;
+                height: 40px;
+              }
             }
           }
           .btn-connect {
             button {
-              width: 291px;
-              height: 86px;
-              border-radius: 6px;
-              background-color: $blue-primary;
-              color: $white;
-              font-family: Avenir-Black;
-              font-size: 39px;
-              font-weight: 900;
-              letter-spacing: 1.4px;
-              line-height: 42px;
-              margin-left: 12px;
+              margin-left: 7px;
 
-              &:hover {
-                cursor: pointer;
+              @include ipad {
+                width: 133px;
+                height: 40px;
+                margin-left: 5px;
+                font-size: 17px;
               }
             }
           }

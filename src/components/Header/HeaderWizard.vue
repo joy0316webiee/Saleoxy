@@ -4,7 +4,7 @@
       <img class="img-logo" src="@/assets/images/saleoxy_logo.png" alt="logo">
     </div>
     <div class="header-login">
-      <img class="img-user" src="@/assets/images/user_icon.svg" alt="usericon">
+      <img class="img-user" src="@/assets/images/ic_user.svg" alt="usericon">
       <span>Login</span>
     </div>
   </div>
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "HeaderWizard"
 };
 </script>
 
@@ -20,7 +20,7 @@ export default {
 @import "@/assets/sass/base.scss";
 
 .header {
-  padding: 32px 33px;
+  padding: 32px 50px 32px 33px;
   background-image: linear-gradient(
     to right,
     #673ab7 0%,
@@ -33,12 +33,29 @@ export default {
   justify-content: space-between;
   align-items: center;
 
+  @include desktop-md {
+    padding: 29px 50px 29px 33px;
+  }
+  @include tablet {
+    padding: 17px 50px 17px 33px;
+  }
+  @include ipad {
+    padding: 18px 20px 12px 23px;
+  }
+
   .header-logo {
     .img-logo {
       height: 36px;
 
       &:hover {
         cursor: pointer;
+      }
+
+      @include desktop-md {
+        height: 34px;
+      }
+      @include ipad {
+        height: 24px;
       }
     }
   }
@@ -51,12 +68,16 @@ export default {
     span {
       color: $white;
       font-family: Avenir-Heavy;
-      font-size: 25px;
+      font-size: $font-md-3;
       font-weight: 800;
       padding-top: 4px;
 
       &:hover {
         cursor: pointer;
+      }
+
+      @include ipad {
+        display: none;
       }
     }
   }

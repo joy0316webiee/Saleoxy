@@ -1,0 +1,23 @@
+@import "./variables";
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 100px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: $white-darken;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: $grey-lighter;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: darken($grey-lighter, 10);
+}

@@ -1,24 +1,16 @@
 <template>
-  <div class="wizard-page-container calendar">
-    <div class="wizard-page-head calendar-head">
+  <div class="page-container calendar">
+    <div class="page-head calendar-head">
       <div class="stepper-container">
         <div class="to-back">
           <router-link to="/addfacebook">
             <span class="to-back-icon">
-              <img src="@/assets/images/back-icon.png" alt="to-back-icon">
+              <img src="@/assets/images/ic_back.png" alt="to-back-icon">
             </span>
           </router-link>
           <span class="to-back-label">Back</span>
         </div>
-        <div class="stepper">
-          <div class="stepper-wrapper">
-            <span class="circle">1</span>
-            <span class="hypen"></span>
-            <span class="circle">2</span>
-            <span class="hypen"></span>
-            <span class="circle">3</span>
-          </div>
-        </div>
+        <Stepper value="2"/>
       </div>
       <div class="title">
         <h1>Welcome Onboard!</h1>
@@ -34,7 +26,7 @@
           <img src="@/assets/images/calendar.png" alt="calendar-body-mark">
         </div>
         <div class="calendar-body-connect">
-          <button class="btn-connect">
+          <button class="btn-blue">
             <span v-if="connected">Connected</span>
             <span v-else>Connect</span>
           </button>
@@ -43,7 +35,7 @@
       <div v-if="connected" class="calendar-connected">
         <div class="calendar-body-bottom">
           <div class="user-icon">
-            <img src="@/assets/images/user_icon_red.png" alt="user-icon-red">
+            <img src="@/assets/images/ic_user_red.png" alt="user-icon-red">
           </div>
           <div class="user-desc">
             <h4>John Smith</h4>
@@ -58,16 +50,23 @@
       </div>
     </div>
     <div class="calendar-foot">
-      <button v-on:click="continueNext()">CONTINUE</button>
+      <button class="btn-blue" v-on:click="continueNext()" :class="{connected: connected}">
+        <span class="text-desk">CONTINUE</span>
+        <span class="text-mb">{{connected ? "CONTINUE" : "SKIP"}}</span>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import router from "@/router";
+import Stepper from "@/components/Stepper.vue";
 
 export default {
   name: "AddGoogleCalendar",
+  components: {
+    Stepper
+  },
   data() {
     return {
       connected: false
@@ -91,6 +90,10 @@ export default {
 .calendar {
   .calendar-head {
     .title {
+      @include ipad {
+        padding-top: 74px;
+      }
+
       h2 {
         margin-bottom: 0px;
       }
@@ -102,9 +105,16 @@ export default {
         text-align: center;
         color: $blue-primary;
         font-family: Avenir-Black;
-        font-size: 33px;
-        margin-top: 22px;
-        margin-bottom: 65px;
+        font-size: $font-lg-3;
+        margin-top: 51px;
+        margin-bottom: 60px;
+
+        @include ipad {
+          margin-top: 35px;
+          margin-bottom: 47px;
+          font-size: 20px;
+          font-weight: 900;
+        }
       }
     }
     .calendar-body-middle {
@@ -113,24 +123,42 @@ export default {
       justify-content: center;
       align-items: center;
 
+      @include ipad {
+        flex-direction: column;
+      }
+
       .calendar-body-mark {
         img {
-          width: 86px;
+          width: 78px;
+
+          @include ipad {
+            width: 58px;
+            margin-bottom: 20px;
+          }
         }
       }
       .calendar-body-connect {
-        padding-left: 27px;
+        padding-left: 23px;
+
+        @include ipad {
+          padding: 0px;
+        }
 
         button {
-          width: 291px;
-          height: 86px;
-          border-radius: 6px;
-          background-color: $blue-primary;
-          color: $white;
-          font-family: Avenir-Black;
-          font-size: 39px;
-          letter-spacing: 1.4px;
-          line-height: 42px;
+          width: 264px;
+          height: 78px;
+          font-size: $font-xl-2;
+          letter-spacing: 1.22px;
+          line-height: 37px;
+
+          @include ipad {
+            width: 194px;
+            height: 58px;
+            font-size: 25px;
+            font-weight: 900;
+            letter-spacing: 0.9px;
+            line-height: 27px;
+          }
         }
       }
     }
@@ -138,10 +166,22 @@ export default {
       .calendar-body-bottom {
         p {
           color: $red-light;
-          font-size: 30px;
-          padding: 59px 213px 72px 213px;
           margin: 0px;
           text-align: center;
+          padding: 53px 117px 0px 198px;
+          font-size: $font-sm-3;
+
+          @include desktop-md {
+            padding: 49px 120px 0px 120px;
+          }
+          @include tablet {
+            padding: 68px 120px 0px 120px;
+          }
+          @include ipad {
+            padding: 48px 24px 0px 22px;
+            font-size: 10px;
+            text-align: left;
+          }
         }
       }
     }
@@ -149,28 +189,54 @@ export default {
       .calendar-body-bottom {
         display: flex;
         justify-content: center;
-        margin-top: 38px;
+        margin-top: 34px;
+
+        @include tablet {
+          margin-top: 56px;
+        }
+        @include ipad {
+          margin-top: 35px;
+        }
 
         .user-icon {
           img {
-            width: 66px;
-            height: 60px;
+            width: 59px;
+            height: 54px;
+
+            @include ipad {
+              width: 20px;
+              height: 18px;
+            }
           }
         }
         .user-desc {
-          margin-left: 17px;
+          margin-left: 15px;
+
+          @include ipad {
+            margin-left: 29px;
+          }
 
           h4 {
             margin: 0px;
-            color: $red-light;
+            color: $blue-primary;
             font-family: Avenir-Black;
-            font-size: 32px;
+            font-size: $font-lg-2;
+
+            @include ipad {
+              font-size: 24px;
+              font-weight: 800;
+            }
           }
           a {
             text-decoration: none;
             color: $red-light;
-            font-size: 22px;
+            font-size: $font-sm-1;
             font-weight: 400;
+            color: $blue-primary;
+
+            @include ipad {
+              font-size: 17px;
+            }
           }
         }
       }
@@ -179,23 +245,41 @@ export default {
   .calendar-foot {
     text-align: right;
     position: absolute;
-    right: 64px;
-    bottom: 24px;
+    right: 72px;
+    bottom: 18px;
+
+    @include tablet {
+      bottom: 44px;
+    }
+    @include ipad {
+      right: 16px;
+      bottom: 24px;
+    }
 
     button {
-      width: 233px;
-      height: 70px;
-      border-radius: 6px;
-      background-color: $blue-primary;
-      color: $white;
-      font-family: Avenir-Black;
-      font-size: 31px;
-      letter-spacing: 1.12px;
-      line-height: 33px;
-      text-transform: uppercase;
+      @include ipad {
+        width: 63px;
+        height: 33px;
+        font-size: 14px;
+        font-weight: 900;
 
-      &:hover {
-        cursor: pointer;
+        &.connected {
+          width: 109px;
+          height: 33px;
+        }
+      }
+
+      .text-desk {
+        @include ipad {
+          display: none;
+        }
+      }
+      .text-mb {
+        display: none;
+
+        @include ipad {
+          display: inherit;
+        }
       }
     }
   }

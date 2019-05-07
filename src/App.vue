@@ -5,29 +5,31 @@
 </template>
 
 <style lang="scss">
-  @import "@/assets/sass/base.scss";
-  
-  #app {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;   
+@import "@/assets/sass/base.scss";
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Avenir-Roman;
+  min-width: $min-width;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
+}
 
-  body {
-    margin: 0 auto;
-    padding: 0;
-    font-family: Avenir-Roman;
-  }
-
-  * {
-    box-sizing: border-box;
-
-    &:focus {
-      outline: none !important;
-      box-shadow: none !important;
-    }
-  }
-
-  // div {
-  //   border: 1px solid #bbb;
-  // }
+div {
+  // border: 1px solid #bbb;
+}
 </style>

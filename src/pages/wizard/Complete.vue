@@ -1,23 +1,17 @@
 <template>
-  <div class="wizard-page-container complete">
-    <div class="wizard-page-head complete-head">
+  <div class="page-container complete">
+    <div class="page-head complete-head">
       <div class="stepper-container">
         <div class="to-back">
           <router-link to="/addappointment">
             <span class="to-back-icon">
-              <img src="@/assets/images/back-icon.png" alt="to-back-icon">
+              <img src="@/assets/images/ic_back.png" alt="to-back-icon">
             </span>
           </router-link>
           <span class="to-back-label">Back</span>
         </div>
         <div class="stepper">
-          <div class="stepper-wrapper">
-            <span class="circle">1</span>
-            <span class="hypen"></span>
-            <span class="circle">2</span>
-            <span class="hypen"></span>
-            <span class="circle">3</span>
-          </div>
+          <Stepper value="4"/>
         </div>
       </div>
       <div class="sale-logo">
@@ -34,7 +28,7 @@
       </div>
       <div class="complete-body-tick">
         <span>
-          <img src="@/assets/images/tick-icon.png" alt="tick-icon">
+          <img src="@/assets/images/ic_tick.png" alt="tick-icon">
         </span>
       </div>
       <div class="complete-body-desc">
@@ -42,65 +36,140 @@
       </div>
     </div>
     <div class="complete-foot">
-      <button>START</button>
+      <button class="btn-blue">START</button>
     </div>
   </div>
 </template>
 
 <script>
+import Stepper from "@/components/Stepper.vue";
+
 export default {
-  name: "Complete"
+  name: "Complete",
+  components: {
+    Stepper
+  }
 };
 </script>
 
 <style scope lang="scss">
+@import "@/assets/sass/base.scss";
+
 .complete {
   .complete-head {
     .sale-logo {
-      padding: 46px 434px 0px;
+      padding: 64px 390px 0px;
+
+      @include desktop-md {
+        padding: 43px 266px 0px;
+      }
+      @include tablet {
+        padding: 43px 199px 0px;
+      }
+      @include ipad {
+        display: none;
+      }
 
       img {
-        width: 398px;
-        height: 54px;
+        width: 306px;
+        height: 44px;
+
+        @include tablet {
+          width: 250px;
+          height: 34px;
+        }
       }
     }
     .title {
-      padding-top: 61px;
+      padding-top: 42px;
+
+      @include desktop-md {
+        padding-top: 15px;
+      }
+      @include ipad {
+        padding-top: 46px;
+      }
 
       h1 {
         margin-bottom: 9px;
+
+        @include ipad {
+          margin-bottom: 29px;
+        }
       }
       h2 {
+        font-size: $font-md-2;
         margin: 0px;
+
+        @include ipad {
+          color: #6b3fb8;
+          font-weight: 800;
+        }
       }
     }
   }
   .complete-body {
     .complete-body-robot {
       position: absolute;
-      top: 172px;
-      left: 149px;
+      top: 136px;
+      left: 113px;
+
+      @include desktop-md {
+        top: 70px;
+        left: 25px;
+      }
+      @include tablet {
+        top: 126px;
+      }
+      @include ipad {
+        top: 169px;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
 
       img {
-        width: 243px;
-        height: 305px;
+        width: 201px;
+        height: 297px;
+
+        @include ipad {
+          width: 132px;
+          height: auto;
+        }
       }
     }
     .complete-body-tick {
       text-align: center;
-      padding-top: 36px;
+      padding-top: 30px;
+
+      @include tablet {
+        padding-top: 66px;
+      }
+      @include ipad {
+        padding-top: 251px;
+      }
 
       span {
         display: inline-block;
-        width: 146px;
-        height: 146px;
+        width: 112px;
+        height: 112px;
         padding: 34px 20px;
         border-radius: 50%;
-        background-color: #164bcd;
+        background-color: $blue-primary;
+
+        @include ipad {
+          width: 72px;
+          height: 72px;
+          padding: 22px 14px;
+        }
 
         img {
-          width: 90px;
-          height: 67px;
+          width: 75px;
+          height: 56px;
+
+          @include ipad {
+            width: 45px;
+            height: auto;
+          }
         }
       }
     }
@@ -108,12 +177,20 @@ export default {
       text-align: center;
 
       p {
-        color: #164bcd;
+        color: $blue-primary;
         font-family: Avenir;
-        font-size: 32px;
+        font-size: $font-md-2;
         font-weight: 800;
         text-transform: uppercase;
-        margin: 49px 0px;
+        margin: 38px 0px;
+
+        @include tablet {
+          margin: 120px 0px 30px;
+        }
+        @include ipad {
+          font-size: 15px;
+          margin: 30px 0px 28px;
+        }
       }
     }
   }
@@ -121,20 +198,16 @@ export default {
     text-align: center;
 
     button {
-      width: 291px;
-      height: 86px;
-      border-radius: 6px;
-      background-color: #164bcd;
-      color: #ffffff;
-      font-family: Avenir-Black;
-      font-size: 39px;
-      /* font-weight: 900; */
-      letter-spacing: 1.4px;
-      line-height: 42px;
+      width: 224px;
+      height: 67px;
+      font-size: $font-lg-2;
       text-transform: uppercase;
 
-      &:hover {
-        cursor: pointer;
+      @include ipad {
+        width: 152px;
+        height: 46px;
+        font-size: 19px;
+        font-weight: 900;
       }
     }
   }

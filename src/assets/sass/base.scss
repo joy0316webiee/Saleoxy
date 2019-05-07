@@ -2,8 +2,8 @@
 
 /* Animations */
 .fade-anim-enter-active {
-  animation: coming .5s;
-  animation-delay: .3s;
+  animation: coming 0.5s;
+  animation-delay: 0.3s;
   opacity: 0;
 }
 
@@ -16,40 +16,90 @@
   }
 }
 
-.wizard-page-container {
-  position: relative;
-  margin: 108px auto 0px;
-  width: 1282px;
-  height: 738px;
-  border-radius: 34px;
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.16);
-  margin: 138px auto 0px;
-  width: 1270px;
-  height: 738px;
-  background-color: $white;
+.layout {
+  background-image: url("~@/assets/images/wizard_bg.png");
+  background-size: cover;
+  height: 1080px;
+
+  @include tablet {
+    background-image: url("~@/assets/images/wizard_bg_left_top.png"),
+      url("~@/assets/images/wizard_bg_right_bottom.png");
+    background-repeat: no-repeat;
+    background-position: left top, right bottom;
+    background-size: 85% auto, 68% auto;
+  }
+  @include ipad {
+    min-height: 825px;
+    height: 100vh;
+  }
 }
 
-.wizard-page-head {
+.page-container {
+  position: relative;
+  width: 1087px;
+  height: 592px;
+  margin: 153px auto 0px;
+  border-radius: 20px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.16);
+  background-color: $white;
+
+  @include desktop-md {
+    width: 840px;
+    height: 520px;
+  }
+  @include tablet {
+    width: 650px;
+    height: 634px;
+  }
+  @include ipad {
+    width: 399px;
+    height: 613px;
+    margin-top: 68px;
+  }
+  @include iphone {
+    width: 326px;
+  }
+}
+
+.page-head {
   text-align: right;
 
   .to-back {
     display: flex;
     align-items: center;
-    float: left;
-    padding-top: 34px;
-    padding-left: 24px;
+    position: absolute;
+    top: 23px;
+    left: 51px;
+
+    @include desktop-md {
+      left: 35px;
+    }
+    @include ipad {
+      left: 19px;
+      top: 14px;
+    }
 
     .to-back-icon {
       padding: 4px;
-      width: 34px;
-      height: 34px;
+      width: 29px;
+      height: 29px;
       background-color: $blue-primary;
       border-radius: 50%;
       display: inline-block;
 
+      @include ipad {
+        width: 23px;
+        height: 23px;
+      }
+
       img {
-        width: 25px;
-        height: 27px;
+        width: 21px;
+        height: 22px;
+
+        @include ipad {
+          width: 14px;
+          height: 15px;
+        }
       }
 
       &:hover {
@@ -61,55 +111,183 @@
       height: 39px;
       color: $blue-primary;
       font-family: Avenir-Medium;
-      font-size: 28px;
+      font-size: $font-md-2;
       font-weight: 500;
       padding-top: 7px;
       padding-left: 8px;
-    }
-  }
-  .stepper {
-    position: absolute;
-    right: 78px;
 
-    .stepper-wrapper {
-      display: flex;
-      align-items: center;
-      padding: 34px 0px 0px 78px;
-
-      .circle {
-        display: inline-block;
-        width: 39px;
-        height: 39px;
-        border: 4px solid $blue-primary;
-        border-radius: 50%;
-        text-align: center;
-        padding: 1px;
-        color: $blue-primary;
-        font-family: Avenir-black;
-        font-size: 28px;
-      }
-      .hypen {
-        display: inline-block;
-        width: 17px;
-        height: 4px;
-        background-color: $red-light;
-        margin: 0px 4px;
+      @include ipad {
+        font-size: 14px;
+        padding: 0px 0px 0px 5px;
+        width: auto;
+        height: auto;
       }
     }
   }
   .title {
     text-align: center;
-    padding-top: 73px;
+    padding-top: 21px;
+
+    @include tablet {
+      padding-top: 48px;
+    }
+    @include ipad {
+      padding-top: 64px;
+    }
 
     h1 {
       color: $red-light;
       font-family: Avenir-Heavy;
-      font-size: 43px;
+      font-size: $font-xl-3;
       margin-top: 0px;
+      margin-bottom: 5px;
+
+      @include tablet {
+        font-size: 28px;
+      }
+      @include ipad {
+        font-size: 23px;
+        margin-bottom: 18px;
+      }
     }
     h2 {
+      margin-top: 0px;
+      margin-bottom: 51px;
+      font-size: $font-lg-1;
+      font-weight: 400;
       color: $blue-primary;
-      font-size: 32px;
+
+      @include tablet {
+        font-size: 24px;
+      }
+      @include ipad {
+        font-size: 13px;
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
+
+.btn-blue {
+  width: 191px;
+  height: 57px;
+  border-radius: 6px;
+  background-color: $blue-primary;
+  color: $white;
+  font-family: Avenir-Black;
+  font-size: $font-md-3;
+  line-height: 27px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($blue-primary, 10%);
+  }
+}
+
+.page-border {
+  padding: 12px 60px 0px 41px;
+  // position: relative;
+
+  .page-border-head {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+
+    img {
+      width: 31px;
+      height: 31px;
+    }
+    span {
+      color: #6b3fb8;
+      font-family: Avenir-heavy;
+      font-size: 20px;
+      font-weight: 800;
+      margin-top: 4px;
+      margin-left: 15px;
+    }
+  }
+  .page-border-body {
+    height: 900px;
+    box-shadow: 0 15px 13px rgba(0, 0, 0, 0.04);
+    border: 6px solid #9b7bcb;
+    background-color: #ffffff;
+    padding: 25px 3px 39px 17px;
+
+    .page-border-menubar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 10px;
+      padding-bottom: 15px;
+
+      .page-border-menubar-left {
+        .arr {
+          width: 8px;
+          height: 12px;
+          display: inline-block;
+          background-size: contain;
+
+          &:hover {
+            cursor: pointer;
+          }
+          &.arr-left {
+            background-image: url("~@/assets/images/arr_left_yellow.png");
+          }
+          &.arr-right {
+            background-image: url("~@/assets/images/arr_right_yellow.png");
+          }
+        }
+
+        .date {
+          color: #ff9201;
+          font-family: Avenir-heavy;
+          font-size: 16px;
+          font-weight: 800;
+          letter-spacing: 0.11px;
+          padding: 0 24px;
+        }
+      }
+      .page-border-menubar-right {
+        display: flex;
+        align-items: center;
+
+        > div {
+          display: flex;
+          align-items: center;
+
+          span {
+            color: #ff9201;
+            font-family: Avenir-heavy;
+            font-size: 16px;
+            font-weight: 800;
+            padding-right: 4px;
+          }
+          img {
+            width: 22px;
+          }
+        }
+        .add-holiday {
+          margin-right: 14px;
+
+          .add-holiday-image {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        .new {
+          span {
+            padding-right: 10px;
+          }
+          .new-image {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 }
